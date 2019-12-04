@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>面试</title>
+    <url>/2019/12/04/%E9%9D%A2%E8%AF%95/</url>
+    <content><![CDATA[<h1 id="反省自己"><a href="#反省自己" class="headerlink" title="反省自己"></a>反省自己</h1><ol>
+<li>基础不扎实,能力不足</li>
+<li>不能被面试官带着走,问啥答啥;要陈述+原因+理由</li>
+<li>没有证书证明自己,只能靠技术</li>
+<li>实习生面试一般问基础,至今还没有问spring框架的</li>
+</ol>
+<h1 id="面试题"><a href="#面试题" class="headerlink" title="面试题"></a>面试题</h1><h2 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h2><h2 id="sql"><a href="#sql" class="headerlink" title="sql"></a>sql</h2><ol>
+<li>基础语法<ol>
+<li>order by id desc :降序排列</li>
+<li>group by 与 having</li>
+<li>limit 分页</li>
+<li>去重</li>
+<li>update</li>
+<li>delete</li>
+<li>union 与 union all</li>
+</ol>
+</li>
+<li>多表连接查询 join on</li>
+<li>sql优化</li>
+</ol>
+<h2 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h2><ol>
+<li>常用命令</li>
+</ol>
+<hr>
+<h1 id="自闭口区"><a href="#自闭口区" class="headerlink" title="自闭口区"></a>自闭口区</h1><blockquote>
+<p>双选面试了三天,一个都没过,每次结果出来没有自己,看着地板,恨不得融化到地面里,这辈子就当个地板多好;</p>
+<p>看着身边的同学一个个的拿到了offer,也想过为什么不是我,到底差在哪了,?这个答案只有面试官知道了;</p>
+<p>今天面试的时候,已经隐约感觉到凉了,最后面试官问:你还有什么想问的?厚颜无耻的问了薪资待遇,出了门才明白,我应该问问面试官对我有什么评价……<br>最后是银联的面试,上来就是java基础,linux基础(知道答案但是没说出来mkdir),sql基础(limit分页)啊啊啊啊啊啊啊啊</p>
+</blockquote>
+]]></content>
+      <tags>
+        <tag>面试</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>搭建博客</title>
+    <url>/2019/11/28/%E7%BD%91%E7%BB%9C/</url>
+    <content><![CDATA[<h2 id="搭建个人博客"><a href="#搭建个人博客" class="headerlink" title="搭建个人博客"></a>搭建个人博客</h2><p>hexo在本地搭建博客框架</p>
+<ul>
+<li>放到github上可以外网访问</li>
+<li>内网穿透本地服务器,使用厂商提供的域名</li>
+<li>直接购买云厂商的域名+云服务器配套服务</li>
+</ul>
+<h2 id="域名注册"><a href="#域名注册" class="headerlink" title="域名注册"></a>域名注册</h2><ul>
+<li>找国内的域名注册厂商,可以注册中文域名</li>
+<li>必须要实名认证和备案,否则不能使用</li>
+</ul>
+]]></content>
+      <categories>
+        <category>blog</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>厉害的博客</title>
+    <url>/2019/11/27/%E5%A4%A7%E4%BD%AC%E4%BB%AC/</url>
+    <content><![CDATA[<p>这里用来记录我发现的各种大佬,大神们:</p>
+<ul>
+<li><a href="http://saili.science/" target="_blank" rel="noopener">Alex Lee</a><ul>
+<li>搜索hexo主题的时候发现的大佬的博客,顿时被惊艳到,不仅有各种奇淫技巧;关键是这个<a href="http://theme-next.iissnan.com/" target="_blank" rel="noopener">Next</a>主题高大上;果断偷师</li>
+<li><a href="http://theme-next.iissnan.com/" target="_blank" rel="noopener">NexT官方教程</a></li>
+<li><a href="https://www.jianshu.com/p/1f8107a8778c" target="_blank" rel="noopener">主题进阶优化</a>:其实官方网站有非常详细的优化教程,这个是为了记录别人写的教程;多个思路</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>大佬</tag>
+      </tags>
+  </entry>
+</search>
