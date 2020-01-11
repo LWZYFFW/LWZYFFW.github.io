@@ -268,8 +268,12 @@ SELECT * FROM t WHERE 1=1
 <li>找国内的域名注册厂商,可以注册中文域名</li>
 <li>必须要实名认证和备案,否则不能使用</li>
 </ul>
-<h3 id="Hexo-Admin上传图片到图床"><a href="#Hexo-Admin上传图片到图床" class="headerlink" title="Hexo Admin上传图片到图床"></a>Hexo Admin上传图片到图床</h3><p><img src="/images/001.jpg" alt="test"></p>
-<p><img src="%5Cimages%5Cleecode.png%5C" alt="upload successful"></p>
+<h3 id="Hexo-Admin上传图片"><a href="#Hexo-Admin上传图片" class="headerlink" title="Hexo Admin上传图片"></a>Hexo Admin上传图片</h3><p><img src="/images/pasted-0.png" alt="upload successful"><br><img src="/images/001.jpg" alt="test"><br><img src="http://q3x8fy3z6.bkt.clouddn.com/001.jpg" alt="upload successful"></p>
+<p><img src="http://q3ucohdwu.bkt.clouddn.com/blog/20200111/vDDhVpMgo6dc.jpeg?imageslim" alt="mark"></p>
+<blockquote>
+<p>结论:hexo admin 上传图片到本地的source/images , 然后发布到git中,并不是我想要的上传到图床<br>hexo-admin-qiniu 专门用来上传到图床,但是不会用.</p>
+</blockquote>
+<p>最终选择: MPic 手动上传到图床 + hexo-admin 管理编写页面</p>
 ]]></content>
       <categories>
         <category>blog</category>

@@ -79,18 +79,20 @@
 
 
 
-<meta name="description" content="搭建个人博客hexo在本地搭建博客框架  放到github上可以外网访问 内网穿透本地服务器,使用厂商提供的域名 直接购买云厂商的域名+云服务器配套服务  域名注册 找国内的域名注册厂商,可以注册中文域名 必须要实名认证和备案,否则不能使用  Hexo Admin上传图片到图床">
+<meta name="description" content="搭建个人博客hexo在本地搭建博客框架  放到github上可以外网访问 内网穿透本地服务器,使用厂商提供的域名 直接购买云厂商的域名+云服务器配套服务  域名注册 找国内的域名注册厂商,可以注册中文域名 必须要实名认证和备案,否则不能使用  Hexo Admin上传图片   结论:hexo admin 上传图片到本地的source&#x2F;images , 然后发布到git中,并不是我想要的上传到图床h">
 <meta property="og:type" content="article">
 <meta property="og:title" content="搭建博客">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;28&#x2F;%E7%BD%91%E7%BB%9C&#x2F;index.html">
 <meta property="og:site_name" content="YFFW">
-<meta property="og:description" content="搭建个人博客hexo在本地搭建博客框架  放到github上可以外网访问 内网穿透本地服务器,使用厂商提供的域名 直接购买云厂商的域名+云服务器配套服务  域名注册 找国内的域名注册厂商,可以注册中文域名 必须要实名认证和备案,否则不能使用  Hexo Admin上传图片到图床">
+<meta property="og:description" content="搭建个人博客hexo在本地搭建博客框架  放到github上可以外网访问 内网穿透本地服务器,使用厂商提供的域名 直接购买云厂商的域名+云服务器配套服务  域名注册 找国内的域名注册厂商,可以注册中文域名 必须要实名认证和备案,否则不能使用  Hexo Admin上传图片   结论:hexo admin 上传图片到本地的source&#x2F;images , 然后发布到git中,并不是我想要的上传到图床h">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;images&#x2F;pasted-0.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;images&#x2F;001.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;28&#x2F;%E7%BD%91%E7%BB%9C&#x2F;%5Cimages%5Cleecode.png%5C">
-<meta property="og:updated_time" content="2020-01-11T03:46:48.937Z">
+<meta property="og:image" content="http:&#x2F;&#x2F;q3x8fy3z6.bkt.clouddn.com&#x2F;001.jpg">
+<meta property="og:image" content="http:&#x2F;&#x2F;q3ucohdwu.bkt.clouddn.com&#x2F;blog&#x2F;20200111&#x2F;vDDhVpMgo6dc.jpeg?imageslim">
+<meta property="og:updated_time" content="2020-01-11T04:34:54.693Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;images&#x2F;001.jpg">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;images&#x2F;pasted-0.png">
 
 
 
@@ -386,8 +388,12 @@
 <li>找国内的域名注册厂商,可以注册中文域名</li>
 <li>必须要实名认证和备案,否则不能使用</li>
 </ul>
-<h3 id="Hexo-Admin上传图片到图床"><a href="#Hexo-Admin上传图片到图床" class="headerlink" title="Hexo Admin上传图片到图床"></a>Hexo Admin上传图片到图床</h3><p><img src="/images/001.jpg" alt="test"></p>
-<p><img src="%5Cimages%5Cleecode.png%5C" alt="upload successful"></p>
+<h3 id="Hexo-Admin上传图片"><a href="#Hexo-Admin上传图片" class="headerlink" title="Hexo Admin上传图片"></a>Hexo Admin上传图片</h3><p><img src="/images/pasted-0.png" alt="upload successful"><br><img src="/images/001.jpg" alt="test"><br><img src="http://q3x8fy3z6.bkt.clouddn.com/001.jpg" alt="upload successful"></p>
+<p><img src="http://q3ucohdwu.bkt.clouddn.com/blog/20200111/vDDhVpMgo6dc.jpeg?imageslim" alt="mark"></p>
+<blockquote>
+<p>结论:hexo admin 上传图片到本地的source/images , 然后发布到git中,并不是我想要的上传到图床<br>hexo-admin-qiniu 专门用来上传到图床,但是不会用.</p>
+</blockquote>
+<p>最终选择: MPic 手动上传到图床 + hexo-admin 管理编写页面</p>
 
       
     </div>
@@ -560,7 +566,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#搭建个人博客"><span class="nav-number">1.</span> <span class="nav-text">搭建个人博客</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#域名注册"><span class="nav-number">2.</span> <span class="nav-text">域名注册</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Hexo-Admin上传图片到图床"><span class="nav-number">2.1.</span> <span class="nav-text">Hexo Admin上传图片到图床</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#搭建个人博客"><span class="nav-number">1.</span> <span class="nav-text">搭建个人博客</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#域名注册"><span class="nav-number">2.</span> <span class="nav-text">域名注册</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Hexo-Admin上传图片"><span class="nav-number">2.1.</span> <span class="nav-text">Hexo Admin上传图片</span></a></li></ol></li></ol></div>
             
 
           </div>
