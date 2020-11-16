@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Mysql," />
 
 
 
@@ -79,11 +79,15 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="YFFW">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;tags&#x2F;%E5%A4%A7%E4%BD%AC&#x2F;index.html">
+<meta name="description" content="sql基础语法1. order by id desc :降序排列 2. group by 与 having     1. 凡是在group by后面出现的字段，必须同时在select后面出现；     4. 凡是在select后面出现的、同时未在聚合函数中出现的字段，必须同时出现在group by后面     5. having 子句被限制子已经在SELECT语句中定义的列和聚合表达式上">
+<meta name="keywords" content="Mysql">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MySql">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;07&#x2F;05&#x2F;MySql&#x2F;index.html">
 <meta property="og:site_name" content="YFFW">
+<meta property="og:description" content="sql基础语法1. order by id desc :降序排列 2. group by 与 having     1. 凡是在group by后面出现的字段，必须同时在select后面出现；     4. 凡是在select后面出现的、同时未在聚合函数中出现的字段，必须同时出现在group by后面     5. having 子句被限制子已经在SELECT语句中定义的列和聚合表达式上">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-07-05T14:27:17.188Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -114,13 +118,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/大佬/"/>
+  <link rel="canonical" href="http://yoursite.com/2020/07/05/MySql/"/>
 
 
 
 
 
-  <title>标签: 大佬 | YFFW</title>
+  <title>MySql | YFFW</title>
   
 
 
@@ -139,7 +143,7 @@
     
   
 
-  <div class="container sidebar-position-right ">
+  <div class="container sidebar-position-right page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -267,54 +271,254 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>大佬<small>标签</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/05/MySql/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="YFFW">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://q3ucohdwu.bkt.clouddn.com/blog/20200109/MolRS1e7AqXu.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YFFW">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2019/11/27/%E5%A4%A7%E4%BD%AC%E4%BB%AC/" itemprop="url">
-              
-                <span itemprop="name">厉害的博客</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">MySql</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-11-27T15:14:25+08:00"
-              content="2019-11-27" >
-          11-27
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-05T22:07:44+08:00">
+                2020-07-05
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%A8%8B%E5%BA%8F%E5%91%98/" itemprop="url" rel="index">
+                    <span itemprop="name">程序员</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    </div>
+      
 
+      
+        <h1 id="sql"><a href="#sql" class="headerlink" title="sql"></a>sql</h1><h2 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h2><pre><code>1. order by id desc :降序排列
+2. group by 与 having
+    1. 凡是在group by后面出现的字段，必须同时在select后面出现；
+    4. 凡是在select后面出现的、同时未在聚合函数中出现的字段，必须同时出现在group by后面
+    5. having 子句被限制子已经在SELECT语句中定义的列和聚合表达式上
+    6. group by 必须放在 order by 和 limit之前，不然会报错
+3. limit n,m
+    1. n:从第n条的下一条开始,m:查出m条数据
+    2. limit m 查出前m条数据
+    3. limit 4,-1 ; --从第5个数据开始包括（5），一直到最后
+4. 去重 distinct 
+    1. 只能用在select
+        - select distinct name from table_name;
+    2. distinct必须放在开头
+    3. 使得DISTINCT 只对其中某一项生效
+        - SELECT  group_concat(DISTINCT province) AS province, city FROM test_distinct GROUP BY province;
+5. update
+    - UPDATE Person SET Address = &apos;Zhongshan 23&apos;, City = &apos;Nanjing&apos;</code></pre><p>WHERE LastName = ‘Wilson’<br>    6. delete<br>        - DELETE FROM Person WHERE LastName = ‘Wilson’<br>    7. insert<br>        - INSERT INTO table_name (列1, 列2,…) VALUES (值1, 值2,….)<br>    7. union 与 union all<br>        1. UNION 操作符用于合并两个或多个 SELECT 语句的结果集。<br>        2. UNION 内部的 SELECT 语句必须拥有相同数量的列。列也必须拥有相似的数据类型。同时，每条 SELECT 语句中的列的顺序必须相同。<br>        3. union all 允许重复的值</p>
+<h2 id="Where-Group-By-Having-Order-by顺序执行"><a href="#Where-Group-By-Having-Order-by顺序执行" class="headerlink" title="Where, Group By, Having, Order by顺序执行"></a>Where, Group By, Having, Order by顺序执行</h2><h2 id="多表连接查询-join-on"><a href="#多表连接查询-join-on" class="headerlink" title="多表连接查询 join on"></a>多表连接查询 join on</h2><pre><code>1. join:内连接只显示两个表的匹配数据
+2. left join:返回左表的全部行和右表满足ON条件的行，如果左表的行在右表中没有匹配，那么这一行右表中对应数据用NULL代替
+3. right join:返回右表的全部行和左表满足ON条件的行，如果右表的行在左表中没有匹配，那么这一行左表中对应数据用NULL代替
+4. full join:会从左表 和右表 那里返回所有的行。如果其中一个表的数据行在另一个表中没有匹配的行，那么对面的数据用NULL代替</code></pre><h2 id="sql优化"><a href="#sql优化" class="headerlink" title="sql优化"></a>sql优化</h2><pre><code>1、在表中建立索引，优先考虑where、group by使用到的字段。
+
+2、尽量避免使用select *，返回无用的字段会降低查询效率。如下：
+SELECT * FROM t 
+优化方式：使用具体的字段代替*，只返回使用到的字段。
+
+3、尽量避免使用in 和not in，会导致数据库引擎放弃索引进行全表扫描。如下：
+SELECT * FROM t WHERE id IN (2,3)
+
+SELECT * FROM t1 WHERE username IN (SELECT username FROM t2)
+
+优化方式：如果是连续数值，可以用between代替。如下：
+
+SELECT * FROM t WHERE id BETWEEN 2 AND 3
+
+如果是子查询，可以用exists代替。如下：
+
+SELECT * FROM t1 WHERE EXISTS (SELECT * FROM t2 WHERE t1.username = t2.username)
+
+
+
+
+
+
+
+
+
+
+
+
+
+4、尽量避免使用or，会导致数据库引擎放弃索引进行全表扫描。如下：
+
+SELECT * FROM t WHERE id = 1 OR id = 3
+
+优化方式：可以用union代替or。如下：
+
+SELECT * FROM t WHERE id = 1
+UNION
+SELECT * FROM t WHERE id = 3
+
+（PS：如果or两边的字段是同一个，如例子中这样。貌似两种方式效率差不多，即使union扫描的是索引，or扫描的是全表）</code></pre><p>​<br>​<br>​    5、尽量避免在字段开头模糊查询，会导致数据库引擎放弃索引进行全表扫描。如下：<br>​<br>​    SELECT * FROM t WHERE username LIKE ‘%li%’<br>​<br>​    优化方式：尽量在字段后面使用模糊查询。如下：<br>​<br>​    SELECT * FROM t WHERE username LIKE ‘li%’</p>
+<p>​<br>​<br>​    6、尽量避免进行null值的判断，会导致数据库引擎放弃索引进行全表扫描。如下：<br>​<br>​    SELECT * FROM t WHERE score IS NULL<br>​<br>​    优化方式：可以给字段添加默认值0，对0值进行判断。如下：<br>​<br>​    SELECT * FROM t WHERE score = 0</p>
+<p>​<br>​<br>​    7、尽量避免在where条件中等号的左侧进行表达式、函数操作，会导致数据库引擎放弃索引进行全表扫描。如下：<br>​<br>​    SELECT * FROM t2 WHERE score/10 = 9<br>​<br>​    SELECT * FROM t2 WHERE SUBSTR(username,1,2) = ‘li’<br>​<br>​    优化方式：可以将表达式、函数操作移动到等号右侧。如下：<br>​<br>​    SELECT * FROM t2 WHERE score = 10*9<br>​    </p>
+<pre><code>SELECT * FROM t2 WHERE username LIKE &apos;li%&apos;</code></pre><p>​<br>​<br>​    8、当数据量大时，避免使用where 1=1的条件。通常为了方便拼装查询条件，我们会默认使用该条件，数据库引擎会放弃索引进行全表扫描。如下：<br>​<br>​    SELECT * FROM t WHERE 1=1<br>​<br>​    优化方式：用代码拼装sql时进行判断，没where加where，有where加and。</p>
+<h2 id="引擎-MyISAM-和-InnoDB"><a href="#引擎-MyISAM-和-InnoDB" class="headerlink" title="引擎:MyISAM 和 InnoDB"></a>引擎:MyISAM 和 InnoDB</h2><pre><code>1. 区别
+    1. InnoDB支持事务，MyISAM不支持
+
+        &gt;对于InnoDB每一条SQL语言都默认封装成事务，自动提交，这样会影响速度，所以最好把多条SQL语言放在begin和commit之间，组成一个事务；
+
+    2. InnoDB支持外键，而MyISAM不支持。对一个包含外键的InnoDB表转为MYISAM会失败；
+
+    3. InnoDB是聚集索引，数据文件是和索引绑在一起的，必须要有主键，通过主键索引效率很高。  
+        但是辅助索引需要两次查询，先查询到主键，然后再通过主键查询到数据。因此主键不应该过大，因为主键太大，其他索引也都会很大。  
+        而MyISAM是非聚集索引，数据文件是分离的，索引保存的是数据文件的指针。主键索引和辅助索引是独立的。
+
+    4. InnoDB不保存表的具体行数，执行select count(*) from table时需要全表扫描。而MyISAM用一个变量保存了整个表的行数，执行上述语句时只需要读出该变量即可，速度很快；
+
+    5. Innodb不支持全文索引，而MyISAM支持全文索引，查询效率上MyISAM要高；</code></pre><h2 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h2><pre><code>1. 什么是事务
+    &gt;事务是由一步或几步数据库操作序列组成逻辑执行单元，这系列操作要么全部执行，要么全部放弃执行。程序和事务是两个不同的概念。一般而言：一段程序中可能包含多个事务
+2. 深入理解
+    &gt;待写</code></pre><h2 id=""><a href="#" class="headerlink" title=""></a></h2>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Mysql/" rel="tag"># Mysql</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/07/05/Linux/" rel="next" title="Linux">
+                <i class="fa fa-chevron-left"></i> Linux
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/07/07/Mybatis/" rel="prev" title="Mybatis">
+                Mybatis <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -322,6 +526,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -342,8 +550,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -362,7 +579,7 @@
               
                 <a href="/archives/%7C%7C%20archive">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -384,7 +601,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -407,6 +624,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#sql"><span class="nav-number">1.</span> <span class="nav-text">sql</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基础语法"><span class="nav-number">1.1.</span> <span class="nav-text">基础语法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Where-Group-By-Having-Order-by顺序执行"><span class="nav-number">1.2.</span> <span class="nav-text">Where, Group By, Having, Order by顺序执行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多表连接查询-join-on"><span class="nav-number">1.3.</span> <span class="nav-text">多表连接查询 join on</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sql优化"><span class="nav-number">1.4.</span> <span class="nav-text">sql优化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#引擎-MyISAM-和-InnoDB"><span class="nav-number">1.5.</span> <span class="nav-text">引擎:MyISAM 和 InnoDB</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#事务"><span class="nav-number">1.6.</span> <span class="nav-text">事务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">1.7.</span> <span class="nav-text"></span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -540,6 +773,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 

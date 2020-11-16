@@ -1,8 +1,154 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>一个爱读书的人</title>
-    <url>/2020/01/12/%E4%B8%80%E4%B8%AA%E7%88%B1%E8%AF%BB%E4%B9%A6%E7%9A%84%E4%BA%BA/</url>
+    <title>Spring</title>
+    <url>/2020/07/07/Spring/</url>
+    <content><![CDATA[<h1 id="Spring"><a href="#Spring" class="headerlink" title="Spring"></a>Spring</h1><h2 id="IOC"><a href="#IOC" class="headerlink" title="IOC"></a>IOC</h2><h2 id="AOP"><a href="#AOP" class="headerlink" title="AOP"></a>AOP</h2><h2 id="mvc流程"><a href="#mvc流程" class="headerlink" title="mvc流程"></a>mvc流程</h2><pre><code>&gt;1.客户端发送请求，请求交给前端控制器，前端控制器把请求交给映射处理器。  
+2.映射处理器绑定一个控制器类（进行业务处理），返回结果给前端控制器  
+3.前端控制器调用控制器的方法，处理业务（调用业务层，业务层调用持久层），把模型和视图封装成ModelAndView对象返回。  
+4.前端控制器调用视图解析器，解析视图，把结果返回给前端控制器。  
+5.前端控制器响应视图到客户端。  </code></pre>]]></content>
+      <categories>
+        <category>程序员</category>
+      </categories>
+      <tags>
+        <tag>Spring</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Mybatis</title>
+    <url>/2020/07/07/Mybatis/</url>
+    <content><![CDATA[<h1 id="mybatis注解-核心jdbc封装"><a href="#mybatis注解-核心jdbc封装" class="headerlink" title="mybatis注解,$ #  核心jdbc封装"></a>mybatis注解,$ #  核心jdbc封装</h1><pre><code>@Insert,@Select,@Delete,@Update
+- ${}:解析阶段直接进行字符串替换
+- #{}:先将#{}解析成占位符?,    再进行替换
+&gt;  #{}更安全,可以防止sql注入漏洞  
+&gt;  #{ }会为变量加上单引号，比如：
+SELECT * FROM student WHERE name = &quot;小明&quot;,
+这个语句中 “小明” 就是当作字符串来解析的，使用 #{ }是正合适的，
+但是当语句为 
+SELECT * FROM student ORDER BY id时，
+id 如果使用 #{ }，语句会被解析成 
+SELECT * FROM student ORDER BY &apos;id&apos;，
+那么这种情况就不得不使用 ${}</code></pre><h1 id=""><a href="#" class="headerlink" title=""></a></h1>]]></content>
+      <categories>
+        <category>程序员</category>
+      </categories>
+      <tags>
+        <tag>Mybatis</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MySql</title>
+    <url>/2020/07/05/MySql/</url>
+    <content><![CDATA[<h1 id="sql"><a href="#sql" class="headerlink" title="sql"></a>sql</h1><h2 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h2><pre><code>1. order by id desc :降序排列
+2. group by 与 having
+    1. 凡是在group by后面出现的字段，必须同时在select后面出现；
+    4. 凡是在select后面出现的、同时未在聚合函数中出现的字段，必须同时出现在group by后面
+    5. having 子句被限制子已经在SELECT语句中定义的列和聚合表达式上
+    6. group by 必须放在 order by 和 limit之前，不然会报错
+3. limit n,m
+    1. n:从第n条的下一条开始,m:查出m条数据
+    2. limit m 查出前m条数据
+    3. limit 4,-1 ; --从第5个数据开始包括（5），一直到最后
+4. 去重 distinct 
+    1. 只能用在select
+        - select distinct name from table_name;
+    2. distinct必须放在开头
+    3. 使得DISTINCT 只对其中某一项生效
+        - SELECT  group_concat(DISTINCT province) AS province, city FROM test_distinct GROUP BY province;
+5. update
+    - UPDATE Person SET Address = &apos;Zhongshan 23&apos;, City = &apos;Nanjing&apos;</code></pre><p>WHERE LastName = ‘Wilson’<br>    6. delete<br>        - DELETE FROM Person WHERE LastName = ‘Wilson’<br>    7. insert<br>        - INSERT INTO table_name (列1, 列2,…) VALUES (值1, 值2,….)<br>    7. union 与 union all<br>        1. UNION 操作符用于合并两个或多个 SELECT 语句的结果集。<br>        2. UNION 内部的 SELECT 语句必须拥有相同数量的列。列也必须拥有相似的数据类型。同时，每条 SELECT 语句中的列的顺序必须相同。<br>        3. union all 允许重复的值</p>
+<h2 id="Where-Group-By-Having-Order-by顺序执行"><a href="#Where-Group-By-Having-Order-by顺序执行" class="headerlink" title="Where, Group By, Having, Order by顺序执行"></a>Where, Group By, Having, Order by顺序执行</h2><h2 id="多表连接查询-join-on"><a href="#多表连接查询-join-on" class="headerlink" title="多表连接查询 join on"></a>多表连接查询 join on</h2><pre><code>1. join:内连接只显示两个表的匹配数据
+2. left join:返回左表的全部行和右表满足ON条件的行，如果左表的行在右表中没有匹配，那么这一行右表中对应数据用NULL代替
+3. right join:返回右表的全部行和左表满足ON条件的行，如果右表的行在左表中没有匹配，那么这一行左表中对应数据用NULL代替
+4. full join:会从左表 和右表 那里返回所有的行。如果其中一个表的数据行在另一个表中没有匹配的行，那么对面的数据用NULL代替</code></pre><h2 id="sql优化"><a href="#sql优化" class="headerlink" title="sql优化"></a>sql优化</h2><pre><code>1、在表中建立索引，优先考虑where、group by使用到的字段。
+
+2、尽量避免使用select *，返回无用的字段会降低查询效率。如下：
+SELECT * FROM t 
+优化方式：使用具体的字段代替*，只返回使用到的字段。
+
+3、尽量避免使用in 和not in，会导致数据库引擎放弃索引进行全表扫描。如下：
+SELECT * FROM t WHERE id IN (2,3)
+
+SELECT * FROM t1 WHERE username IN (SELECT username FROM t2)
+
+优化方式：如果是连续数值，可以用between代替。如下：
+
+SELECT * FROM t WHERE id BETWEEN 2 AND 3
+
+如果是子查询，可以用exists代替。如下：
+
+SELECT * FROM t1 WHERE EXISTS (SELECT * FROM t2 WHERE t1.username = t2.username)
+
+
+
+
+
+
+
+
+
+
+
+
+
+4、尽量避免使用or，会导致数据库引擎放弃索引进行全表扫描。如下：
+
+SELECT * FROM t WHERE id = 1 OR id = 3
+
+优化方式：可以用union代替or。如下：
+
+SELECT * FROM t WHERE id = 1
+UNION
+SELECT * FROM t WHERE id = 3
+
+（PS：如果or两边的字段是同一个，如例子中这样。貌似两种方式效率差不多，即使union扫描的是索引，or扫描的是全表）</code></pre><p>​<br>​<br>​    5、尽量避免在字段开头模糊查询，会导致数据库引擎放弃索引进行全表扫描。如下：<br>​<br>​    SELECT * FROM t WHERE username LIKE ‘%li%’<br>​<br>​    优化方式：尽量在字段后面使用模糊查询。如下：<br>​<br>​    SELECT * FROM t WHERE username LIKE ‘li%’</p>
+<p>​<br>​<br>​    6、尽量避免进行null值的判断，会导致数据库引擎放弃索引进行全表扫描。如下：<br>​<br>​    SELECT * FROM t WHERE score IS NULL<br>​<br>​    优化方式：可以给字段添加默认值0，对0值进行判断。如下：<br>​<br>​    SELECT * FROM t WHERE score = 0</p>
+<p>​<br>​<br>​    7、尽量避免在where条件中等号的左侧进行表达式、函数操作，会导致数据库引擎放弃索引进行全表扫描。如下：<br>​<br>​    SELECT * FROM t2 WHERE score/10 = 9<br>​<br>​    SELECT * FROM t2 WHERE SUBSTR(username,1,2) = ‘li’<br>​<br>​    优化方式：可以将表达式、函数操作移动到等号右侧。如下：<br>​<br>​    SELECT * FROM t2 WHERE score = 10*9<br>​    </p>
+<pre><code>SELECT * FROM t2 WHERE username LIKE &apos;li%&apos;</code></pre><p>​<br>​<br>​    8、当数据量大时，避免使用where 1=1的条件。通常为了方便拼装查询条件，我们会默认使用该条件，数据库引擎会放弃索引进行全表扫描。如下：<br>​<br>​    SELECT * FROM t WHERE 1=1<br>​<br>​    优化方式：用代码拼装sql时进行判断，没where加where，有where加and。</p>
+<h2 id="引擎-MyISAM-和-InnoDB"><a href="#引擎-MyISAM-和-InnoDB" class="headerlink" title="引擎:MyISAM 和 InnoDB"></a>引擎:MyISAM 和 InnoDB</h2><pre><code>1. 区别
+    1. InnoDB支持事务，MyISAM不支持
+
+        &gt;对于InnoDB每一条SQL语言都默认封装成事务，自动提交，这样会影响速度，所以最好把多条SQL语言放在begin和commit之间，组成一个事务；
+
+    2. InnoDB支持外键，而MyISAM不支持。对一个包含外键的InnoDB表转为MYISAM会失败；
+
+    3. InnoDB是聚集索引，数据文件是和索引绑在一起的，必须要有主键，通过主键索引效率很高。  
+        但是辅助索引需要两次查询，先查询到主键，然后再通过主键查询到数据。因此主键不应该过大，因为主键太大，其他索引也都会很大。  
+        而MyISAM是非聚集索引，数据文件是分离的，索引保存的是数据文件的指针。主键索引和辅助索引是独立的。
+
+    4. InnoDB不保存表的具体行数，执行select count(*) from table时需要全表扫描。而MyISAM用一个变量保存了整个表的行数，执行上述语句时只需要读出该变量即可，速度很快；
+
+    5. Innodb不支持全文索引，而MyISAM支持全文索引，查询效率上MyISAM要高；</code></pre><h2 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h2><pre><code>1. 什么是事务
+    &gt;事务是由一步或几步数据库操作序列组成逻辑执行单元，这系列操作要么全部执行，要么全部放弃执行。程序和事务是两个不同的概念。一般而言：一段程序中可能包含多个事务
+2. 深入理解
+    &gt;待写</code></pre><h2 id=""><a href="#" class="headerlink" title=""></a></h2>]]></content>
+      <categories>
+        <category>程序员</category>
+      </categories>
+      <tags>
+        <tag>Mysql</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Linux</title>
+    <url>/2020/07/05/Linux/</url>
+    <content><![CDATA[<h1 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h1><h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><pre><code>- pwd 显示工作路径 
+- jsp java进程
+- sudo 以管理员身份执行命令
+- grep -C200 &quot;&quot; [path]搜索文件钟的指定字符
+- su admin 登录
+- ssh root@localhost password</code></pre><h2 id="vim"><a href="#vim" class="headerlink" title="vim"></a>vim</h2>]]></content>
+      <categories>
+        <category>程序员</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>读书</title>
+    <url>/2020/01/12/%E8%AF%BB%E4%B9%A6/</url>
     <content><![CDATA[<h1 id="我的书单"><a href="#我的书单" class="headerlink" title="我的书单"></a>我的书单</h1><p>明朝那些事</p>
 <p>高效人士的7个习惯</p>
 <p>每天进步一点点</p>
@@ -16,9 +162,53 @@
 ]]></content>
   </entry>
   <entry>
-    <title>一个合格的程序员</title>
-    <url>/2019/12/06/%E4%B8%80%E4%B8%AA%E5%90%88%E6%A0%BC%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98/</url>
-    <content><![CDATA[<h1 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h1><h2 id="Collection与Map"><a href="#Collection与Map" class="headerlink" title="Collection与Map"></a>Collection与Map</h2><h3 id="List、Set、Map-之间的区别是什么？"><a href="#List、Set、Map-之间的区别是什么？" class="headerlink" title="List、Set、Map 之间的区别是什么？"></a>List、Set、Map 之间的区别是什么？</h3><ul>
+    <title>hexo</title>
+    <url>/2020/01/11/hexo/</url>
+    <content><![CDATA[<h1 id="hexo操作手册"><a href="#hexo操作手册" class="headerlink" title="hexo操作手册"></a>hexo操作手册</h1><p>在本地搭建博客框架</p>
+<ul>
+<li>放到github上可以外网访问</li>
+<li>内网穿透本地服务器,使用厂商提供的域名</li>
+<li>直接购买云厂商的域名+云服务器配套服务</li>
+</ul>
+<h2 id="域名注册"><a href="#域名注册" class="headerlink" title="域名注册"></a>域名注册</h2><ul>
+<li>找国内的域名注册厂商,可以注册中文域名</li>
+<li>必须要实名认证和备案,否则不能使用</li>
+</ul>
+<h3 id="Hexo-Admin上传图片"><a href="#Hexo-Admin上传图片" class="headerlink" title="Hexo Admin上传图片"></a>Hexo Admin上传图片</h3><p><img src="/images/pasted-0.png" alt="upload successful"><br><img src="/images/001.jpg" alt="test"><br><img src="http://q3x8fy3z6.bkt.clouddn.com/001.jpg" alt="upload successful"></p>
+<p><img src="http://q3ucohdwu.bkt.clouddn.com/blog/20200111/vDDhVpMgo6dc.jpeg?imageslim" alt="mark"></p>
+<blockquote>
+<p>结论:hexo admin 上传图片到本地的source/images , 然后发布到git中,并不是我想要的上传到图床<br>hexo-admin-qiniu 专门用来上传到图床,但是不会用.</p>
+</blockquote>
+<p>最终选择: MPic 手动上传到图床 + hexo-admin 管理编写页面</p>
+<h3 id="写文档"><a href="#写文档" class="headerlink" title="写文档"></a>写文档</h3><ul>
+<li><p>在source/_posts目录下使用hexo new命令，或者手动新建.md文件</p>
+</li>
+<li><p>写好后使用hexo d -g生成并上传</p>
+</li>
+<li><p>通过<a href="https://lwzyffw.github.io/访问博客" target="_blank" rel="noopener">https://lwzyffw.github.io/访问博客</a></p>
+</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Java</title>
+    <url>/2019/12/06/Java/</url>
+    <content><![CDATA[<h1 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h1><h2 id="Collection"><a href="#Collection" class="headerlink" title="Collection"></a>Collection</h2><h3 id="List"><a href="#List" class="headerlink" title="List"></a>List</h3><pre><code>ArrayList 底层是数组
+地址中连续的存储结构,数组对象记录数组中首个元素地址
+LinkedList 基于链表双向
+
+vector  数组实现,线程安全</code></pre><h3 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h3><pre><code>hashcode判断不可重复存储,只能取得全部
+
+HashSet 基于Hashmap  在key中保存数据
+
+TreeSet 基于TreeMap (红黑树)实现 , 有序的</code></pre><h2 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h2><pre><code>HashMap  底层是数组结构Entry[] table,每一个数组entry元素都存储一个key,value对以及指向下一个Entry的引用,这样就构成了链表
+
+HashTable 安全的,不允许为空的HashMap
+
+TreeMap 基于红黑树的自排序Map</code></pre><h2 id="Collection与Map"><a href="#Collection与Map" class="headerlink" title="Collection与Map"></a>Collection与Map</h2><h3 id="List、Set、Map-之间的区别是什么？"><a href="#List、Set、Map-之间的区别是什么？" class="headerlink" title="List、Set、Map 之间的区别是什么？"></a>List、Set、Map 之间的区别是什么？</h3><ul>
 <li>List:有序,可重复,可为空</li>
 <li>Set:无序,不可重复,一个元素为空</li>
 <li>Map:无序,key可以有一个为空,不可重复,value可以有多个</li>
@@ -28,9 +218,11 @@
 <li>vector线程安全的,所以性能不如arraylist,其他两个都不是线程安全</li>
 <li>linkedlist基于链表,新增和删除效率高</li>
 </ul>
-<h3 id="Map实现类-HashMap与HashTable区别"><a href="#Map实现类-HashMap与HashTable区别" class="headerlink" title="Map实现类 HashMap与HashTable区别"></a>Map实现类 HashMap与HashTable区别</h3><ul>
+<h3 id="Map实现类-HashMap与HashTable-TreeMap区别"><a href="#Map实现类-HashMap与HashTable-TreeMap区别" class="headerlink" title="Map实现类 HashMap与HashTable,TreeMap区别"></a>Map实现类 HashMap与HashTable,TreeMap区别</h3><ul>
 <li>HashMap是HashTable的轻量级实现</li>
-<li>HashMap线程不安全,效率高,允许key或value的值为null,而HashTable相反</li>
+<li>HashMap线程不安全,效率高,允许一个key或多个value的值为null,</li>
+<li>HashTable线程安全,key和value不能为空</li>
+<li>TreeMap 基于红黑树的自排序Map</li>
 </ul>
 <h3 id="Set实现类-HashSet-LinkedHashSet-TreeSet"><a href="#Set实现类-HashSet-LinkedHashSet-TreeSet" class="headerlink" title="Set实现类 HashSet,LinkedHashSet,TreeSet"></a>Set实现类 HashSet,LinkedHashSet,TreeSet</h3><ul>
 <li>HashSet与Set相同特点</li>
@@ -85,46 +277,38 @@
 - Callable和Future创建线程:创建Callable接口的实现类重写call()方法,使用FutureTask类包装,再用Thread包装并start启动</code></pre><h3 id="线程的状态"><a href="#线程的状态" class="headerlink" title="线程的状态"></a>线程的状态</h3><pre><code>1. 创建-就绪-运行-阻塞-销毁</code></pre><h3 id="线程池的了解"><a href="#线程池的了解" class="headerlink" title="线程池的了解"></a>线程池的了解</h3><pre><code>1. 执行Runnable任务:  
     - ExecutorService实例的execute(Runnable对象)
 2. 执行Callable任务
-    - Future对象接受ExecutorService实例的Submit(Callable实现类实例)方法返回的对象</code></pre><h3 id="synchronized可以修饰类-方法-代码块-不具有继承性"><a href="#synchronized可以修饰类-方法-代码块-不具有继承性" class="headerlink" title="synchronized可以修饰类,方法,代码块,不具有继承性"></a>synchronized可以修饰类,方法,代码块,不具有继承性</h3><h2 id="jvm包括以及作用-内存溢出与内存泄漏"><a href="#jvm包括以及作用-内存溢出与内存泄漏" class="headerlink" title="jvm包括以及作用,内存溢出与内存泄漏"></a>jvm包括以及作用,内存溢出与内存泄漏</h2><ol>
-<li>包括:程序计数器,本地方法栈,虚拟机栈,堆,方法区<ol>
-<li>程序计数器记录字节码指令执行的位置</li>
-<li>本地方法栈提供native方法</li>
-<li>虚拟机栈包括:每个方法都有一个栈帧用于存储局部变量表,操作数栈,动态连接,方法出口等信息</li>
-<li>堆,存放对象实例和数组:包括新生代(Eden,from,to(8:1:1)),老年代(1:2)<ol>
-<li>垃圾回收<ol>
-<li>判断对象已死:引用计数法(循环引用问题),可达性分析法</li>
-<li>垃圾回收算法:<pre><code>- 标记清除算法,复制算法,标记整理算法,分代回收
-- 回收流程:基于分代回收
-&gt;堆中的对象实例在优先放在在新生代的Eden,Eden未满时使用 标记清除算法,当Eden内存不够存放新的对象时,使用复制算法,将Eden中存活的对象复制到from中,清空Eden.Eden和from都满的时候,复制算法将Eden和from存活的对象复制到to,清空Eden和from,将to改名为from,from改名为to,直到to中不足以存放Eden和from的对象时,将对象直接放到老年代,老年代被放满的时候用标记整理算法清除老年代中的死对象,并将存活对象整理到一起</code></pre></li>
-</ol>
+    - Future对象接受ExecutorService实例的Submit(Callable实现类实例)方法返回的对象</code></pre><h3 id="synchronized可以修饰类-方法-代码块-不具有继承性"><a href="#synchronized可以修饰类-方法-代码块-不具有继承性" class="headerlink" title="synchronized可以修饰类,方法,代码块,不具有继承性"></a>synchronized可以修饰类,方法,代码块,不具有继承性</h3><h2 id="JVM"><a href="#JVM" class="headerlink" title="JVM"></a>JVM</h2><p>程序计数器,本地方法栈,虚拟机栈,堆,方法区</p>
+<ol>
+<li><p>程序计数器记录字节码指令执行的位置</p>
 </li>
-<li>内存溢出与内存泄漏<ol>
+<li><p>本地方法栈提供native方法</p>
+</li>
+<li><p>虚拟机栈包括:每个方法都有一个栈帧用于存储局部变量表,操作数栈,动态连接,方法出口等信息</p>
+</li>
+<li><p>堆,存放对象实例和数组:包括新生代(Eden,from,to(8:1:1)),老年代(1:2)</p>
+<ul>
+<li><p>垃圾回收: 判断对象已死:引用计数法(循环引用问题),可达性分析法</p>
+</li>
+<li><p>垃圾回收算法: 标记清除算法,复制算法,标记整理算法,分代回收</p>
+<blockquote>
+<p>堆中的对象实例在优先放在在新生代的Eden,Eden未满时使用 标记清除算法,当Eden内存不够存放新的对象时,使用复制算法,将Eden中存活的对象复制到from中,清空Eden.Eden和from都满的时候,复制算法将Eden和from存活的对象复制到to,清空Eden和from,将to改名为from,from改名为to,直到to中不足以存放Eden和from的对象时,将对象直接放到老年代,老年代被放满的时候用标记整理算法清除老年代中的死对象,并将存活对象整理到一起</p>
+</blockquote>
+</li>
+<li><p>内存溢出与内存泄漏</p>
+<ul>
 <li>内存泄漏:程序申请内存后无法释放已申请的内存空间,导致系统无法及时回收内存给其他程序使用,多次内存泄漏就会导致内存溢出</li>
 <li>内存溢出:没有足够的内存给程序申请使用</li>
-</ol>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>方法区</p>
+<ul>
+<li>存储class文件信息和运行时常量池;class文件信息包括类信息和静态常量池;运行时常量池在运行时将静态常量池例的内容移动到运行时常量池中;jdk1.8之前字符串常量池在运行时常量池中,1.8开始String常量池放到了堆中</li>
+</ul>
 </li>
 </ol>
-</li>
-<li>方法区存储class文件信息和运行时常量池;class文件信息包括类信息和静态常量池;运行时常量池在运行时将静态常量池例的内容移动到运行时常量池中;jdk1.8之前字符串常量池在运行时常量池中,1.8开始String常量池放到了堆中</li>
-</ol>
-</li>
-</ol>
-<h1 id="Spring"><a href="#Spring" class="headerlink" title="Spring"></a>Spring</h1><h2 id="IOC"><a href="#IOC" class="headerlink" title="IOC"></a>IOC</h2><h2 id="AOP"><a href="#AOP" class="headerlink" title="AOP"></a>AOP</h2><h2 id="mvc流程"><a href="#mvc流程" class="headerlink" title="mvc流程"></a>mvc流程</h2><pre><code>&gt;1.客户端发送请求，请求交给前端控制器，前端控制器把请求交给映射处理器。  
-2.映射处理器绑定一个控制器类（进行业务处理），返回结果给前端控制器  
-3.前端控制器调用控制器的方法，处理业务（调用业务层，业务层调用持久层），把模型和视图封装成ModelAndView对象返回。  
-4.前端控制器调用视图解析器，解析视图，把结果返回给前端控制器。  
-5.前端控制器响应视图到客户端。  </code></pre><h1 id="mybatis注解-核心jdbc封装"><a href="#mybatis注解-核心jdbc封装" class="headerlink" title="mybatis注解,$ #  核心jdbc封装"></a>mybatis注解,$ #  核心jdbc封装</h1><pre><code>@Insert,@Select,@Delete,@Update
-- ${}:解析阶段直接进行字符串替换
-- #{}:先将#{}解析成占位符?,    再进行替换
-&gt;  #{}更安全,可以防止sql注入漏洞  
-&gt;  #{ }会为变量加上单引号，比如：
-SELECT * FROM student WHERE name = &quot;小明&quot;,
-这个语句中 “小明” 就是当作字符串来解析的，使用 #{ }是正合适的，
-但是当语句为 
-SELECT * FROM student ORDER BY id时，
-id 如果使用 #{ }，语句会被解析成 
-SELECT * FROM student ORDER BY &apos;id&apos;，
-那么这种情况就不得不使用 ${}</code></pre><h1 id="Tomcat"><a href="#Tomcat" class="headerlink" title="Tomcat"></a>Tomcat</h1><ol>
+<h1 id="Tomcat"><a href="#Tomcat" class="headerlink" title="Tomcat"></a>Tomcat</h1><ol>
 <li>bin的命令文件:startup.sh  shutdown.sh</li>
 </ol>
 <h1 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h1><ol>
@@ -135,181 +319,30 @@ SELECT * FROM student ORDER BY &apos;id&apos;，
 </li>
 </ol>
 <h1 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构:"></a>数据结构:</h1><p>B树 B+树(文件系统和数据库) 红黑树(java中的TreeSet,TreeMap)</p>
-<h1 id="进制运算转换-移位运算-与或非"><a href="#进制运算转换-移位运算-与或非" class="headerlink" title="进制运算转换,移位运算,与或非"></a>进制运算转换,移位运算,与或非</h1><h1 id="sql"><a href="#sql" class="headerlink" title="sql"></a>sql</h1><h2 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h2><pre><code>1. order by id desc :降序排列
-2. group by 与 having
-    1. 凡是在group by后面出现的字段，必须同时在select后面出现；
-    4. 凡是在select后面出现的、同时未在聚合函数中出现的字段，必须同时出现在group by后面
-    5. having 子句被限制子已经在SELECT语句中定义的列和聚合表达式上
-    6. group by 必须放在 order by 和 limit之前，不然会报错
-3. limit n,m
-    1. n:从第n条的下一条开始,m:查出m条数据
-    2. limit m 查出前m条数据
-    3. limit 4,-1 ; --从第5个数据开始包括（5），一直到最后
-4. 去重 distinct 
-    1. 只能用在select
-        - select distinct name from table_name;
-    2. distinct必须放在开头
-    3. 使得DISTINCT 只对其中某一项生效
-        - SELECT  group_concat(DISTINCT province) AS province, city FROM test_distinct GROUP BY province;
-5. update
-    - UPDATE Person SET Address = &apos;Zhongshan 23&apos;, City = &apos;Nanjing&apos;</code></pre><p>WHERE LastName = ‘Wilson’<br>    6. delete<br>        - DELETE FROM Person WHERE LastName = ‘Wilson’<br>    7. insert<br>        - INSERT INTO table_name (列1, 列2,…) VALUES (值1, 值2,….)<br>    7. union 与 union all<br>        1. UNION 操作符用于合并两个或多个 SELECT 语句的结果集。<br>        2. UNION 内部的 SELECT 语句必须拥有相同数量的列。列也必须拥有相似的数据类型。同时，每条 SELECT 语句中的列的顺序必须相同。<br>        3. union all 允许重复的值</p>
-<h2 id="Where-Group-By-Having-Order-by顺序执行"><a href="#Where-Group-By-Having-Order-by顺序执行" class="headerlink" title="Where, Group By, Having, Order by顺序执行"></a>Where, Group By, Having, Order by顺序执行</h2><h2 id="多表连接查询-join-on"><a href="#多表连接查询-join-on" class="headerlink" title="多表连接查询 join on"></a>多表连接查询 join on</h2><pre><code>1. join:内连接只显示两个表的匹配数据
-2. left join:返回左表的全部行和右表满足ON条件的行，如果左表的行在右表中没有匹配，那么这一行右表中对应数据用NULL代替
-3. right join:返回右表的全部行和左表满足ON条件的行，如果右表的行在左表中没有匹配，那么这一行左表中对应数据用NULL代替
-4. full join:会从左表 和右表 那里返回所有的行。如果其中一个表的数据行在另一个表中没有匹配的行，那么对面的数据用NULL代替</code></pre><h2 id="sql优化"><a href="#sql优化" class="headerlink" title="sql优化"></a>sql优化</h2><pre><code>1、在表中建立索引，优先考虑where、group by使用到的字段。
-
-2、尽量避免使用select *，返回无用的字段会降低查询效率。如下：
-SELECT * FROM t 
-优化方式：使用具体的字段代替*，只返回使用到的字段。
-
-3、尽量避免使用in 和not in，会导致数据库引擎放弃索引进行全表扫描。如下：
-SELECT * FROM t WHERE id IN (2,3)
-
-SELECT * FROM t1 WHERE username IN (SELECT username FROM t2)
-
-优化方式：如果是连续数值，可以用between代替。如下：
-
-SELECT * FROM t WHERE id BETWEEN 2 AND 3
-
-如果是子查询，可以用exists代替。如下：
-
-SELECT * FROM t1 WHERE EXISTS (SELECT * FROM t2 WHERE t1.username = t2.username)
-
-
-
-4、尽量避免使用or，会导致数据库引擎放弃索引进行全表扫描。如下：
-
-SELECT * FROM t WHERE id = 1 OR id = 3
-
-优化方式：可以用union代替or。如下：
-
-SELECT * FROM t WHERE id = 1
-UNION
-SELECT * FROM t WHERE id = 3
-
-（PS：如果or两边的字段是同一个，如例子中这样。貌似两种方式效率差不多，即使union扫描的是索引，or扫描的是全表）
-
-
-
-5、尽量避免在字段开头模糊查询，会导致数据库引擎放弃索引进行全表扫描。如下：
-
-SELECT * FROM t WHERE username LIKE &apos;%li%&apos;
-
-优化方式：尽量在字段后面使用模糊查询。如下：
-
-SELECT * FROM t WHERE username LIKE &apos;li%&apos;
-
-
-
-6、尽量避免进行null值的判断，会导致数据库引擎放弃索引进行全表扫描。如下：
-
-SELECT * FROM t WHERE score IS NULL
-
-优化方式：可以给字段添加默认值0，对0值进行判断。如下：
-
-SELECT * FROM t WHERE score = 0
-
-
-
-7、尽量避免在where条件中等号的左侧进行表达式、函数操作，会导致数据库引擎放弃索引进行全表扫描。如下：
-
-SELECT * FROM t2 WHERE score/10 = 9
-
-SELECT * FROM t2 WHERE SUBSTR(username,1,2) = &apos;li&apos;
-
-优化方式：可以将表达式、函数操作移动到等号右侧。如下：
-
-SELECT * FROM t2 WHERE score = 10*9
-
-SELECT * FROM t2 WHERE username LIKE &apos;li%&apos;
-
-
-
-8、当数据量大时，避免使用where 1=1的条件。通常为了方便拼装查询条件，我们会默认使用该条件，数据库引擎会放弃索引进行全表扫描。如下：
-
-SELECT * FROM t WHERE 1=1
-
-优化方式：用代码拼装sql时进行判断，没where加where，有where加and。</code></pre><h2 id="引擎-MyISAM-和-InnoDB"><a href="#引擎-MyISAM-和-InnoDB" class="headerlink" title="引擎:MyISAM 和 InnoDB"></a>引擎:MyISAM 和 InnoDB</h2><pre><code>1. 区别
-    1. InnoDB支持事务，MyISAM不支持
-
-        &gt;对于InnoDB每一条SQL语言都默认封装成事务，自动提交，这样会影响速度，所以最好把多条SQL语言放在begin和commit之间，组成一个事务；
-
-    2. InnoDB支持外键，而MyISAM不支持。对一个包含外键的InnoDB表转为MYISAM会失败；
-
-    3. InnoDB是聚集索引，数据文件是和索引绑在一起的，必须要有主键，通过主键索引效率很高。  
-        但是辅助索引需要两次查询，先查询到主键，然后再通过主键查询到数据。因此主键不应该过大，因为主键太大，其他索引也都会很大。  
-        而MyISAM是非聚集索引，数据文件是分离的，索引保存的是数据文件的指针。主键索引和辅助索引是独立的。
-
-    4. InnoDB不保存表的具体行数，执行select count(*) from table时需要全表扫描。而MyISAM用一个变量保存了整个表的行数，执行上述语句时只需要读出该变量即可，速度很快；
-
-    5. Innodb不支持全文索引，而MyISAM支持全文索引，查询效率上MyISAM要高；</code></pre><h2 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h2><pre><code>1. 什么是事务
-    &gt;事务是由一步或几步数据库操作序列组成逻辑执行单元，这系列操作要么全部执行，要么全部放弃执行。程序和事务是两个不同的概念。一般而言：一段程序中可能包含多个事务
-2. 深入理解
-    &gt;待写</code></pre><h1 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h1><h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><pre><code>- pwd 显示工作路径 
-- jsp java进程
-- sudo 以管理员身份执行命令</code></pre><h2 id="vim"><a href="#vim" class="headerlink" title="vim"></a>vim</h2>]]></content>
-      <tags>
-        <tag>面试</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>面试</title>
-    <url>/2019/12/04/%E9%9D%A2%E8%AF%95/</url>
-    <content><![CDATA[<h1 id="反省自己"><a href="#反省自己" class="headerlink" title="反省自己"></a>反省自己</h1><ol>
-<li>基础不扎实,能力不足</li>
-<li>不能被面试官带着走,问啥答啥;要陈述+原因+理由</li>
-<li>没有证书证明自己,只能靠技术</li>
-<li>实习生面试一般问基础,至今还没有问spring框架的</li>
-<li><strong>言语之间表现出自己的入职欲望+理由</strong></li>
-<li>面试官会从你的表现中得到:语言表达能力,性格,技术水平等</li>
-<li>自信是很大的加分项,谁都不喜欢与闷油瓶在一起工作;</li>
-</ol>
-<hr>
-]]></content>
-      <tags>
-        <tag>面试</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>搭建博客</title>
-    <url>/2019/11/28/%E7%BD%91%E7%BB%9C/</url>
-    <content><![CDATA[<h2 id="搭建个人博客"><a href="#搭建个人博客" class="headerlink" title="搭建个人博客"></a>搭建个人博客</h2><p>hexo在本地搭建博客框架</p>
-<ul>
-<li>放到github上可以外网访问</li>
-<li>内网穿透本地服务器,使用厂商提供的域名</li>
-<li>直接购买云厂商的域名+云服务器配套服务</li>
-</ul>
-<h2 id="域名注册"><a href="#域名注册" class="headerlink" title="域名注册"></a>域名注册</h2><ul>
-<li>找国内的域名注册厂商,可以注册中文域名</li>
-<li>必须要实名认证和备案,否则不能使用</li>
-</ul>
-<h3 id="Hexo-Admin上传图片"><a href="#Hexo-Admin上传图片" class="headerlink" title="Hexo Admin上传图片"></a>Hexo Admin上传图片</h3><p><img src="/images/pasted-0.png" alt="upload successful"><br><img src="/images/001.jpg" alt="test"><br><img src="http://q3x8fy3z6.bkt.clouddn.com/001.jpg" alt="upload successful"></p>
-<p><img src="http://q3ucohdwu.bkt.clouddn.com/blog/20200111/vDDhVpMgo6dc.jpeg?imageslim" alt="mark"></p>
-<blockquote>
-<p>结论:hexo admin 上传图片到本地的source/images , 然后发布到git中,并不是我想要的上传到图床<br>hexo-admin-qiniu 专门用来上传到图床,但是不会用.</p>
-</blockquote>
-<p>最终选择: MPic 手动上传到图床 + hexo-admin 管理编写页面</p>
-]]></content>
+<h1 id="进制运算转换-移位运算-与或非"><a href="#进制运算转换-移位运算-与或非" class="headerlink" title="进制运算转换,移位运算,与或非"></a>进制运算转换,移位运算,与或非</h1>]]></content>
       <categories>
-        <category>blog</category>
+        <category>程序员</category>
       </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>java</tag>
+      </tags>
   </entry>
   <entry>
-    <title>厉害的博客</title>
-    <url>/2019/11/27/%E5%A4%A7%E4%BD%AC%E4%BB%AC/</url>
-    <content><![CDATA[<p>这里用来记录我发现的各种大佬,大神们:</p>
-<ul>
-<li><a href="http://saili.science/" target="_blank" rel="noopener">Alex Lee</a><ul>
-<li>搜索hexo主题的时候发现的大佬的博客,顿时被惊艳到,不仅有各种奇淫技巧;关键是这个<a href="http://theme-next.iissnan.com/" target="_blank" rel="noopener">Next</a>主题高大上;果断偷师</li>
+    <title>收集</title>
+    <url>/2019/11/27/%E6%94%B6%E9%9B%86/</url>
+    <content><![CDATA[<ul>
 <li><a href="http://theme-next.iissnan.com/" target="_blank" rel="noopener">NexT官方教程</a></li>
-<li><a href="https://www.jianshu.com/p/1f8107a8778c" target="_blank" rel="noopener">主题进阶优化</a>:其实官方网站有非常详细的优化教程,这个是为了记录别人写的教程;多个思路</li>
+<li><a href="https://www.jianshu.com/p/1f8107a8778c" target="_blank" rel="noopener">Next 主题进阶优化</a></li>
+<li>hexo next的优秀使用者<ul>
+<li><a href="https://blog.kinpzz.com/" target="_blank" rel="noopener">Paul Kinpzz</a></li>
+<li><a href="http://saili.science/" target="_blank" rel="noopener">Alex Lee</a></li>
 </ul>
 </li>
-<li><a href="https://blog.kinpzz.com/" target="_blank" rel="noopener">Paul Kinpzz</a></li>
 </ul>
 ]]></content>
       <tags>
-        <tag>大佬</tag>
+        <tag>收藏</tag>
       </tags>
   </entry>
 </search>
